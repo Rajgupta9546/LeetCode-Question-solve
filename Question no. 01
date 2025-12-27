@@ -1,0 +1,15 @@
+var twoSum = function(nums, target) {
+    let map = new Map();
+    let ans = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        let b = target - nums[i];
+
+        if (map.has(b)) {
+            ans.push(map.get(b), i);
+            return ans;
+        } else {
+            map.set(nums[i], i);
+        }
+    }
+};
