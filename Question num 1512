@@ -1,0 +1,15 @@
+var numIdenticalPairs = function(nums) {
+    let map = {};   
+    let count = 0; 
+
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i];
+         if (map[num]) {
+          count += map[num]; 
+            map[num]++;
+        } else {
+            map[num] = 1;     
+        }
+    }
+    return count;
+};
