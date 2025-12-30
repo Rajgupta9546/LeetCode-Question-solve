@@ -1,0 +1,25 @@
+var isPalindrome = function(head) {
+   if (head === null || head.next === null) return true;
+    let i = head;
+    let j = head;
+    while (j && j.next) {
+        i = i.next;
+        j = j.next.next;
+    }  
+     let prev = null;
+    while (i) {
+        let next = i.next;
+        i.next = prev;
+        prev = i;
+        i = next;
+    }
+     let first = head;
+    let second = prev;
+    while (second) {
+        if (first.val !== second.val) return false;
+        first = first.next;
+        second = second.next;
+    }
+
+    return true;
+};
