@@ -1,3 +1,4 @@
+Postorder
 var postorderTraversal = function(root) {
     let stack = [root];
     let result = [];
