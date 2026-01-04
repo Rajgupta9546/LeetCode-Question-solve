@@ -1,0 +1,17 @@
+var postorderTraversal = function(root) {
+    let stack = [root];
+    let result = [];
+
+    if (!root) 
+    return [];
+
+    while (stack.length > 0) {
+        let node = stack.pop();
+        result.push(node.val);
+
+        if (node.left) stack.push(node.left);
+        if (node.right) stack.push(node.right);
+    }
+
+    return result.reverse();
+};
